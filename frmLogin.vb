@@ -1,6 +1,6 @@
 ﻿Public Class frmLogin
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Me.Close()
         frmMain.Show()
+        Me.Close()
     End Sub
 End Class
