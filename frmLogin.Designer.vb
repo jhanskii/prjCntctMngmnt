@@ -28,6 +28,10 @@ Partial Class frmLogin
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ts_lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'lbl_LoginHeading
@@ -42,6 +46,7 @@ Partial Class frmLogin
         '
         'btnLogin
         '
+        Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnLogin.Location = New System.Drawing.Point(112, 109)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(188, 41)
@@ -51,6 +56,7 @@ Partial Class frmLogin
         '
         'txtUsername
         '
+        Me.txtUsername.AcceptsTab = True
         Me.txtUsername.Location = New System.Drawing.Point(112, 49)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(188, 20)
@@ -60,9 +66,9 @@ Partial Class frmLogin
         '
         Me.txtPassword.Location = New System.Drawing.Point(112, 83)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(188, 20)
         Me.txtPassword.TabIndex = 3
+        Me.txtPassword.UseSystemPasswordChar = True
         '
         'Label1
         '
@@ -82,11 +88,31 @@ Partial Class frmLogin
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Password:"
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripProgressBar1, Me.ts_lblStatus})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 167)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(346, 22)
+        Me.StatusStrip1.TabIndex = 6
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ts_lblStatus
+        '
+        Me.ts_lblStatus.Name = "ts_lblStatus"
+        Me.ts_lblStatus.Size = New System.Drawing.Size(0, 17)
+        '
+        'ToolStripProgressBar1
+        '
+        Me.ToolStripProgressBar1.Name = "ToolStripProgressBar1"
+        Me.ToolStripProgressBar1.Size = New System.Drawing.Size(100, 16)
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(347, 170)
+        Me.ClientSize = New System.Drawing.Size(346, 189)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtPassword)
@@ -98,7 +124,10 @@ Partial Class frmLogin
         Me.MinimizeBox = False
         Me.Name = "frmLogin"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "User Login"
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -110,4 +139,7 @@ Partial Class frmLogin
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents ToolStripProgressBar1 As ToolStripProgressBar
+    Friend WithEvents ts_lblStatus As ToolStripStatusLabel
 End Class

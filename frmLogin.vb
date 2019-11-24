@@ -27,30 +27,34 @@ Public Class frmLogin
                         If ds.Tables("Login").Rows(0).Item("level") = "1" Then
                             'MDIMain.ToolStripStatusLabel.Text = "Logged as Admin"
 
-                            MsgBox("You Sucessfully Logged in!")
-                            Me.Close()
+                            frmMain.Show()
+                            Me.Hide()
 
                         End If
                         count = count + 1
                     Else
-                        MsgBox("NOT Sucessfully Logged in!")
-                        'lblNotification.Text = "Remaining attempts " & 3 - count & vbCrLf & "Please check your username/password."
+                        ts_lblStatus.Text = "Remaining attempts " & 3 - count & vbCrLf & "Please check your username/password."
                     End If
 
                 Catch ex As Exception
+
                     MsgBox(ex.Message)
                     con.Close()
 
                 End Try
 
             End If
-            'count = count + 1
+            count = count + 1
 
         Else
-            'lblNotification.Text = "Failed to Authenticate, now closing"
-            Me.Close()
+            ts_lblStatus.Text = "Failed to Authenticate, now closing"
+            ' Me.Close()
 
 
         End If
+    End Sub
+
+    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
