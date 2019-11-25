@@ -29,8 +29,8 @@ Partial Class frmLogin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ts_lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
+        Me.ts_lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -97,18 +97,19 @@ Partial Class frmLogin
         Me.StatusStrip1.TabIndex = 6
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'ts_lblStatus
-        '
-        Me.ts_lblStatus.Name = "ts_lblStatus"
-        Me.ts_lblStatus.Size = New System.Drawing.Size(0, 17)
-        '
         'ToolStripProgressBar1
         '
         Me.ToolStripProgressBar1.Name = "ToolStripProgressBar1"
         Me.ToolStripProgressBar1.Size = New System.Drawing.Size(100, 16)
         '
+        'ts_lblStatus
+        '
+        Me.ts_lblStatus.Name = "ts_lblStatus"
+        Me.ts_lblStatus.Size = New System.Drawing.Size(0, 17)
+        '
         'frmLogin
         '
+        Me.AcceptButton = Me.btnLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(346, 189)
