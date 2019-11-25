@@ -22,30 +22,27 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dg_viewContacts = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtSupName = New System.Windows.Forms.TextBox()
-        Me.MySqlGeometryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.txtSupContact1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtSupContact2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.txtSupContact3 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtSupContact2 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtSupContact1 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtSupName = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dg_viewContacts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.MySqlGeometryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -59,7 +56,7 @@ Partial Class frmMain
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.dg_viewContacts)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 169)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(838, 290)
@@ -67,16 +64,16 @@ Partial Class frmMain
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Supplier List"
         '
-        'DataGridView1
+        'dg_viewContacts
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 19)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(826, 265)
-        Me.DataGridView1.TabIndex = 5
+        Me.dg_viewContacts.AllowUserToAddRows = False
+        Me.dg_viewContacts.AllowUserToDeleteRows = False
+        Me.dg_viewContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg_viewContacts.Location = New System.Drawing.Point(6, 19)
+        Me.dg_viewContacts.Name = "dg_viewContacts"
+        Me.dg_viewContacts.ReadOnly = True
+        Me.dg_viewContacts.Size = New System.Drawing.Size(826, 265)
+        Me.dg_viewContacts.TabIndex = 5
         '
         'GroupBox2
         '
@@ -99,57 +96,39 @@ Partial Class frmMain
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "GroupBox2"
         '
-        'Label1
+        'txtSupContact3
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(7, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(76, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Supplier Name"
+        Me.txtSupContact3.Location = New System.Drawing.Point(10, 152)
+        Me.txtSupContact3.Name = "txtSupContact3"
+        Me.txtSupContact3.Size = New System.Drawing.Size(184, 20)
+        Me.txtSupContact3.TabIndex = 11
         '
-        'txtSupName
+        'Label5
         '
-        Me.txtSupName.Location = New System.Drawing.Point(10, 36)
-        Me.txtSupName.Name = "txtSupName"
-        Me.txtSupName.Size = New System.Drawing.Size(184, 20)
-        Me.txtSupName.TabIndex = 1
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(7, 136)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(93, 13)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "Contact Number 3"
         '
-        'MySqlGeometryBindingSource
+        'Button2
         '
-        Me.MySqlGeometryBindingSource.DataSource = GetType(MySql.Data.Types.MySqlGeometry)
+        Me.Button2.Location = New System.Drawing.Point(13, 279)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 9
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'txtSupContact1
+        'Button1
         '
-        Me.txtSupContact1.Location = New System.Drawing.Point(10, 75)
-        Me.txtSupContact1.Name = "txtSupContact1"
-        Me.txtSupContact1.Size = New System.Drawing.Size(184, 20)
-        Me.txtSupContact1.TabIndex = 3
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(7, 59)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Contact Number 1"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(7, 98)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 13)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Contact Number 2"
-        '
-        'txtSupContact2
-        '
-        Me.txtSupContact2.Location = New System.Drawing.Point(10, 114)
-        Me.txtSupContact2.Name = "txtSupContact2"
-        Me.txtSupContact2.Size = New System.Drawing.Size(184, 20)
-        Me.txtSupContact2.TabIndex = 5
+        Me.Button1.Location = New System.Drawing.Point(122, 279)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -168,39 +147,53 @@ Partial Class frmMain
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Address"
         '
-        'Button1
+        'txtSupContact2
         '
-        Me.Button1.Location = New System.Drawing.Point(122, 279)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.txtSupContact2.Location = New System.Drawing.Point(10, 114)
+        Me.txtSupContact2.Name = "txtSupContact2"
+        Me.txtSupContact2.Size = New System.Drawing.Size(184, 20)
+        Me.txtSupContact2.TabIndex = 5
         '
-        'Button2
+        'Label3
         '
-        Me.Button2.Location = New System.Drawing.Point(13, 279)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(7, 98)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(93, 13)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Contact Number 2"
         '
-        'txtSupContact3
+        'txtSupContact1
         '
-        Me.txtSupContact3.Location = New System.Drawing.Point(10, 152)
-        Me.txtSupContact3.Name = "txtSupContact3"
-        Me.txtSupContact3.Size = New System.Drawing.Size(184, 20)
-        Me.txtSupContact3.TabIndex = 11
+        Me.txtSupContact1.Location = New System.Drawing.Point(10, 75)
+        Me.txtSupContact1.Name = "txtSupContact1"
+        Me.txtSupContact1.Size = New System.Drawing.Size(184, 20)
+        Me.txtSupContact1.TabIndex = 3
         '
-        'Label5
+        'Label2
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(7, 136)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(93, 13)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Contact Number 3"
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(7, 59)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(93, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Contact Number 1"
+        '
+        'txtSupName
+        '
+        Me.txtSupName.Location = New System.Drawing.Point(10, 36)
+        Me.txtSupName.Name = "txtSupName"
+        Me.txtSupName.Size = New System.Drawing.Size(184, 20)
+        Me.txtSupName.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(7, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(76, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Supplier Name"
         '
         'GroupBox3
         '
@@ -236,10 +229,9 @@ Partial Class frmMain
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Contact Management System"
         Me.GroupBox1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dg_viewContacts, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.MySqlGeometryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
@@ -249,7 +241,7 @@ Partial Class frmMain
 
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dg_viewContacts As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label4 As Label
@@ -259,7 +251,6 @@ Partial Class frmMain
     Friend WithEvents Label2 As Label
     Friend WithEvents txtSupName As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents MySqlGeometryBindingSource As BindingSource
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents txtSupContact3 As TextBox

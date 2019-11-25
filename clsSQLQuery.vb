@@ -1,5 +1,6 @@
-﻿Public Class clsSQLQuery
-    Dim dbase As New clsSQLQuery
+﻿Imports MySql.Data.MySqlClient
+
+Public Class clsSQLQuery
 
 
 
