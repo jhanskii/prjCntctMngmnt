@@ -22,6 +22,7 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dg_viewContacts = New System.Windows.Forms.DataGridView()
@@ -30,7 +31,7 @@ Partial Class frmMain
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtSupAddress = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtSupContact2 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -59,7 +60,7 @@ Partial Class frmMain
         Me.GroupBox1.Controls.Add(Me.dg_viewContacts)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 169)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(838, 290)
+        Me.GroupBox1.Size = New System.Drawing.Size(702, 290)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Supplier List"
@@ -68,11 +69,18 @@ Partial Class frmMain
         '
         Me.dg_viewContacts.AllowUserToAddRows = False
         Me.dg_viewContacts.AllowUserToDeleteRows = False
+        Me.dg_viewContacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dg_viewContacts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dg_viewContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg_viewContacts.Location = New System.Drawing.Point(6, 19)
+        Me.dg_viewContacts.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dg_viewContacts.Location = New System.Drawing.Point(3, 16)
         Me.dg_viewContacts.Name = "dg_viewContacts"
         Me.dg_viewContacts.ReadOnly = True
-        Me.dg_viewContacts.Size = New System.Drawing.Size(826, 265)
+        Me.dg_viewContacts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg_viewContacts.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.dg_viewContacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dg_viewContacts.Size = New System.Drawing.Size(696, 271)
         Me.dg_viewContacts.TabIndex = 5
         '
         'GroupBox2
@@ -81,7 +89,7 @@ Partial Class frmMain
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Button2)
         Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.txtSupAddress)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.txtSupContact2)
         Me.GroupBox2.Controls.Add(Me.Label3)
@@ -89,7 +97,7 @@ Partial Class frmMain
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.txtSupName)
         Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Location = New System.Drawing.Point(877, 99)
+        Me.GroupBox2.Location = New System.Drawing.Point(733, 99)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(203, 360)
         Me.GroupBox2.TabIndex = 6
@@ -130,13 +138,13 @@ Partial Class frmMain
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtSupAddress
         '
-        Me.TextBox1.Location = New System.Drawing.Point(13, 191)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(184, 82)
-        Me.TextBox1.TabIndex = 7
+        Me.txtSupAddress.Location = New System.Drawing.Point(13, 191)
+        Me.txtSupAddress.Multiline = True
+        Me.txtSupAddress.Name = "txtSupAddress"
+        Me.txtSupAddress.Size = New System.Drawing.Size(184, 82)
+        Me.txtSupAddress.TabIndex = 7
         '
         'Label4
         '
@@ -200,7 +208,7 @@ Partial Class frmMain
         Me.GroupBox3.Controls.Add(Me.txtSearch)
         Me.GroupBox3.Location = New System.Drawing.Point(18, 99)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(832, 64)
+        Me.GroupBox3.Size = New System.Drawing.Size(696, 64)
         Me.GroupBox3.TabIndex = 7
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "GroupBox3"
@@ -211,7 +219,7 @@ Partial Class frmMain
         Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearch.Location = New System.Drawing.Point(6, 20)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(820, 31)
+        Me.txtSearch.Size = New System.Drawing.Size(684, 31)
         Me.txtSearch.TabIndex = 0
         '
         'frmMain
@@ -243,7 +251,7 @@ Partial Class frmMain
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dg_viewContacts As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtSupAddress As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtSupContact2 As TextBox
     Friend WithEvents Label3 As Label
