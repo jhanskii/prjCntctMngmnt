@@ -22,15 +22,16 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dg_viewContacts = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnAddSupp = New System.Windows.Forms.Button()
         Me.txtSupContact3 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.txtSupAddress = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtSupContact2 = New System.Windows.Forms.TextBox()
@@ -49,9 +50,9 @@ Partial Class frmMain
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 519)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 477)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1190, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(977, 22)
         Me.StatusStrip1.TabIndex = 0
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -60,7 +61,7 @@ Partial Class frmMain
         Me.GroupBox1.Controls.Add(Me.dg_viewContacts)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 169)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(702, 290)
+        Me.GroupBox1.Size = New System.Drawing.Size(702, 257)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Supplier List"
@@ -77,18 +78,19 @@ Partial Class frmMain
         Me.dg_viewContacts.Name = "dg_viewContacts"
         Me.dg_viewContacts.ReadOnly = True
         Me.dg_viewContacts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg_viewContacts.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg_viewContacts.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dg_viewContacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_viewContacts.Size = New System.Drawing.Size(696, 271)
+        Me.dg_viewContacts.Size = New System.Drawing.Size(696, 238)
         Me.dg_viewContacts.TabIndex = 5
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.btnAddSupp)
         Me.GroupBox2.Controls.Add(Me.txtSupContact3)
         Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.btnEdit)
+        Me.GroupBox2.Controls.Add(Me.btnUpdate)
         Me.GroupBox2.Controls.Add(Me.txtSupAddress)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.txtSupContact2)
@@ -99,15 +101,26 @@ Partial Class frmMain
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Location = New System.Drawing.Point(733, 99)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(203, 360)
+        Me.GroupBox2.Size = New System.Drawing.Size(203, 375)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "GroupBox2"
+        Me.GroupBox2.Text = "Details"
+        '
+        'btnAddSupp
+        '
+        Me.btnAddSupp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddSupp.Location = New System.Drawing.Point(13, 319)
+        Me.btnAddSupp.Name = "btnAddSupp"
+        Me.btnAddSupp.Size = New System.Drawing.Size(181, 34)
+        Me.btnAddSupp.TabIndex = 12
+        Me.btnAddSupp.Text = "ADD SUPPLIER"
+        Me.btnAddSupp.UseVisualStyleBackColor = True
         '
         'txtSupContact3
         '
         Me.txtSupContact3.Location = New System.Drawing.Point(10, 152)
         Me.txtSupContact3.Name = "txtSupContact3"
+        Me.txtSupContact3.ReadOnly = True
         Me.txtSupContact3.Size = New System.Drawing.Size(184, 20)
         Me.txtSupContact3.TabIndex = 11
         '
@@ -120,30 +133,35 @@ Partial Class frmMain
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Contact Number 3"
         '
-        'Button2
+        'btnEdit
         '
-        Me.Button2.Location = New System.Drawing.Point(13, 279)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnEdit.Enabled = False
+        Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEdit.Location = New System.Drawing.Point(13, 279)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(91, 34)
+        Me.btnEdit.TabIndex = 9
+        Me.btnEdit.Text = "EDIT"
+        Me.btnEdit.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnUpdate
         '
-        Me.Button1.Location = New System.Drawing.Point(122, 279)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnUpdate.Enabled = False
+        Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.Location = New System.Drawing.Point(106, 279)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(88, 34)
+        Me.btnUpdate.TabIndex = 8
+        Me.btnUpdate.Text = "UPDATE"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'txtSupAddress
         '
         Me.txtSupAddress.Location = New System.Drawing.Point(13, 191)
         Me.txtSupAddress.Multiline = True
         Me.txtSupAddress.Name = "txtSupAddress"
-        Me.txtSupAddress.Size = New System.Drawing.Size(184, 82)
+        Me.txtSupAddress.ReadOnly = True
+        Me.txtSupAddress.Size = New System.Drawing.Size(181, 82)
         Me.txtSupAddress.TabIndex = 7
         '
         'Label4
@@ -159,6 +177,7 @@ Partial Class frmMain
         '
         Me.txtSupContact2.Location = New System.Drawing.Point(10, 114)
         Me.txtSupContact2.Name = "txtSupContact2"
+        Me.txtSupContact2.ReadOnly = True
         Me.txtSupContact2.Size = New System.Drawing.Size(184, 20)
         Me.txtSupContact2.TabIndex = 5
         '
@@ -175,6 +194,7 @@ Partial Class frmMain
         '
         Me.txtSupContact1.Location = New System.Drawing.Point(10, 75)
         Me.txtSupContact1.Name = "txtSupContact1"
+        Me.txtSupContact1.ReadOnly = True
         Me.txtSupContact1.Size = New System.Drawing.Size(184, 20)
         Me.txtSupContact1.TabIndex = 3
         '
@@ -191,6 +211,7 @@ Partial Class frmMain
         '
         Me.txtSupName.Location = New System.Drawing.Point(10, 36)
         Me.txtSupName.Name = "txtSupName"
+        Me.txtSupName.ReadOnly = True
         Me.txtSupName.Size = New System.Drawing.Size(184, 20)
         Me.txtSupName.TabIndex = 1
         '
@@ -206,12 +227,12 @@ Partial Class frmMain
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.txtSearch)
-        Me.GroupBox3.Location = New System.Drawing.Point(18, 99)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 99)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(696, 64)
+        Me.GroupBox3.Size = New System.Drawing.Size(702, 64)
         Me.GroupBox3.TabIndex = 7
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "GroupBox3"
+        Me.GroupBox3.Text = "Search"
         '
         'txtSearch
         '
@@ -226,7 +247,7 @@ Partial Class frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1190, 541)
+        Me.ClientSize = New System.Drawing.Size(977, 499)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -259,10 +280,11 @@ Partial Class frmMain
     Friend WithEvents Label2 As Label
     Friend WithEvents txtSupName As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnEdit As Button
+    Friend WithEvents btnUpdate As Button
     Friend WithEvents txtSupContact3 As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents txtSearch As TextBox
+    Friend WithEvents btnAddSupp As Button
 End Class
