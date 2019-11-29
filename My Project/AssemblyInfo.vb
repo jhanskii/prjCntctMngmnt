@@ -8,9 +8,9 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("prjCntctMngmnt")>
+<Assembly: AssemblyTitle("Contact Supplier Management")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyCompany("Nobora Electromechanical Services")>
 <Assembly: AssemblyProduct("prjCntctMngmnt")>
 <Assembly: AssemblyCopyright("Copyright ©  2019")>
 <Assembly: AssemblyTrademark("")>

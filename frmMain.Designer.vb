@@ -22,11 +22,12 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dg_viewContacts = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnAddSupp = New System.Windows.Forms.Button()
         Me.txtSupContact3 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -42,7 +43,9 @@ Partial Class frmMain
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.gbAdminTools = New System.Windows.Forms.GroupBox()
+        Me.StatusStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dg_viewContacts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -51,6 +54,7 @@ Partial Class frmMain
         '
         'StatusStrip1
         '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 542)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(977, 22)
@@ -79,8 +83,9 @@ Partial Class frmMain
         Me.dg_viewContacts.MultiSelect = False
         Me.dg_viewContacts.Name = "dg_viewContacts"
         Me.dg_viewContacts.ReadOnly = True
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg_viewContacts.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dg_viewContacts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg_viewContacts.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dg_viewContacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dg_viewContacts.Size = New System.Drawing.Size(696, 306)
         Me.dg_viewContacts.TabIndex = 5
@@ -107,6 +112,17 @@ Partial Class frmMain
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Details"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Enabled = False
+        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.Location = New System.Drawing.Point(13, 358)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(181, 34)
+        Me.btnDelete.TabIndex = 9
+        Me.btnDelete.Text = "DELETE"
+        Me.btnDelete.UseVisualStyleBackColor = True
         '
         'btnAddSupp
         '
@@ -245,22 +261,27 @@ Partial Class frmMain
         Me.txtSearch.Size = New System.Drawing.Size(684, 31)
         Me.txtSearch.TabIndex = 0
         '
-        'btnDelete
+        'ToolStripStatusLabel1
         '
-        Me.btnDelete.Enabled = False
-        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(13, 358)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(181, 34)
-        Me.btnDelete.TabIndex = 9
-        Me.btnDelete.Text = "DELETE"
-        Me.btnDelete.UseVisualStyleBackColor = True
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(39, 17)
+        Me.ToolStripStatusLabel1.Text = "Ready"
+        '
+        'gbAdminTools
+        '
+        Me.gbAdminTools.Location = New System.Drawing.Point(18, 12)
+        Me.gbAdminTools.Name = "gbAdminTools"
+        Me.gbAdminTools.Size = New System.Drawing.Size(403, 61)
+        Me.gbAdminTools.TabIndex = 8
+        Me.gbAdminTools.TabStop = False
+        Me.gbAdminTools.Text = "Tools"
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(977, 564)
+        Me.Controls.Add(Me.gbAdminTools)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -270,6 +291,8 @@ Partial Class frmMain
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Contact Management System"
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dg_viewContacts, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
@@ -301,4 +324,6 @@ Partial Class frmMain
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnAddSupp As Button
     Friend WithEvents btnDelete As Button
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents gbAdminTools As GroupBox
 End Class

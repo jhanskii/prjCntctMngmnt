@@ -25,7 +25,8 @@ Public Class frmLogin
 
                     If ds.Tables("Login").Rows.Count = 1 Then
                         If ds.Tables("Login").Rows(0).Item("level") = "1" Then
-                            'MDIMain.ToolStripStatusLabel.Text = "Logged as Admin"
+
+                            frmMain.ToolStripStatusLabel1.Text = "Logged As Admin"
 
                             frmMain.Show()
                             Me.Hide()
