@@ -22,10 +22,12 @@ Public Class frmMain
         int_button = 0
     End Sub
 
-    Private Sub dg_viewContacts_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_viewContacts.CellContentClick
+    Private Sub dg_viewContacts_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_viewContacts.CellClick
         SelectionChangeQuery()
         btnDelete.Enabled = True
     End Sub
+
+
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
 
