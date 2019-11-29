@@ -1,12 +1,30 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Text.RegularExpressions
+
 Public Class frmMain
     Dim sIndex, supplierID As Integer
     Dim con As New MySqlConnection("host=localhost;user=root;password=;port=3306;database=db_contactsystem;")
     Dim int_button As Integer
+    Dim ds_populate, userdata_ds As New DataSet
+    Dim da_populate, userdata_da As MySqlDataAdapter
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         queryDataGrid()
         frmLogin.Close()
+
+        con.Open()
+
+        Dim sql_populate2 As String
+        sql_populate2 = "SELECT * FROM tbl_profile WHERE user_id ='" & user_id_key & "';"
+        userdata_da = New MySqlDataAdapter(sql_populate2, con)
+        userdata_da.Fill(userdata_ds, "Profile")
+
+        'Loads Supplier Information
+        lblWelcome.Text = "Welcome back, " & userdata_ds.Tables("Profile").Rows(0).Item("profile_fname").ToString & "!"
+
+        If is_admin = True Then
+            gbAdminTools.Visible = True
+        End If
+        con.Close()
     End Sub
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
@@ -93,8 +111,7 @@ Public Class frmMain
     Public Sub LoadDetails()
         sIndex = dg_viewContacts.CurrentRow.Index
         supplierID = dg_viewContacts.Item("ID", sIndex).Value
-        Dim ds_populate As New DataSet
-        Dim da_populate As MySqlDataAdapter
+
         btnEdit.Enabled = True
 
         Try

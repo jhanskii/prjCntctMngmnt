@@ -24,6 +24,7 @@ Partial Class frmMain
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dg_viewContacts = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -43,13 +44,15 @@ Partial Class frmMain
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.gbAdminTools = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.lblWelcome = New System.Windows.Forms.Label()
         Me.StatusStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dg_viewContacts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.gbAdminTools.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -57,9 +60,15 @@ Partial Class frmMain
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 542)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(977, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(959, 22)
         Me.StatusStrip1.TabIndex = 0
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(39, 17)
+        Me.ToolStripStatusLabel1.Text = "Ready"
         '
         'GroupBox1
         '
@@ -261,26 +270,42 @@ Partial Class frmMain
         Me.txtSearch.Size = New System.Drawing.Size(684, 31)
         Me.txtSearch.TabIndex = 0
         '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(39, 17)
-        Me.ToolStripStatusLabel1.Text = "Ready"
-        '
         'gbAdminTools
         '
-        Me.gbAdminTools.Location = New System.Drawing.Point(18, 12)
+        Me.gbAdminTools.Controls.Add(Me.Button1)
+        Me.gbAdminTools.Location = New System.Drawing.Point(533, 12)
         Me.gbAdminTools.Name = "gbAdminTools"
         Me.gbAdminTools.Size = New System.Drawing.Size(403, 61)
         Me.gbAdminTools.TabIndex = 8
         Me.gbAdminTools.TabStop = False
         Me.gbAdminTools.Text = "Tools"
+        Me.gbAdminTools.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(6, 19)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 36)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "New User"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'lblWelcome
+        '
+        Me.lblWelcome.AutoSize = True
+        Me.lblWelcome.Font = New System.Drawing.Font("Cambria", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWelcome.Location = New System.Drawing.Point(12, 9)
+        Me.lblWelcome.Name = "lblWelcome"
+        Me.lblWelcome.Size = New System.Drawing.Size(204, 34)
+        Me.lblWelcome.TabIndex = 9
+        Me.lblWelcome.Text = "Welcome back, "
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(977, 564)
+        Me.ClientSize = New System.Drawing.Size(959, 564)
+        Me.Controls.Add(Me.lblWelcome)
         Me.Controls.Add(Me.gbAdminTools)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -299,6 +324,7 @@ Partial Class frmMain
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.gbAdminTools.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -326,4 +352,6 @@ Partial Class frmMain
     Friend WithEvents btnDelete As Button
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents gbAdminTools As GroupBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents lblWelcome As Label
 End Class

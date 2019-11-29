@@ -27,7 +27,10 @@ Public Class frmLogin
                         If ds.Tables("Login").Rows(0).Item("level") = "1" Then
 
                             frmMain.ToolStripStatusLabel1.Text = "Logged As Admin"
-
+                            user_id_key = ds.Tables("Login").Rows(0).Item("user_id").ToString
+                            If ds.Tables("Login").Rows(0).Item("level") = "1" Then
+                                is_admin = True
+                            End If
                             frmMain.Show()
                             Me.Hide()
 
