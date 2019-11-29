@@ -40,7 +40,7 @@ Public Class frmMain
         int_button = 0
     End Sub
 
-    Private Sub dg_viewContacts_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_viewContacts.CellClick
+    Private Sub dg_viewContacts_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_viewContacts.CellClick
         SelectionChangeQuery()
         btnDelete.Enabled = True
     End Sub
@@ -113,6 +113,9 @@ Public Class frmMain
         supplierID = dg_viewContacts.Item("ID", sIndex).Value
 
         btnEdit.Enabled = True
+
+        Dim ds_populate As New DataSet
+        Dim da_populate As MySqlDataAdapter
 
         Try
             con.Open()
@@ -207,6 +210,14 @@ Public Class frmMain
         Else
             int_button = 1
         End If
+    End Sub
+
+    Private Sub dg_viewContacts_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dg_viewContacts.CellContentClick
+        SelectionChangeQuery()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        frmAddUser.Show()
     End Sub
 
     Public Sub SelectionChangeQuery()

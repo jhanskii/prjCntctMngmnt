@@ -24,16 +24,17 @@ Partial Class frmAddUser
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.txtPassword2 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtfname = New System.Windows.Forms.TextBox()
+        Me.txtlname = New System.Windows.Forms.TextBox()
         Me.cbAdmin = New System.Windows.Forms.CheckBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnSubmit = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -56,12 +57,12 @@ Partial Class frmAddUser
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Username"
         '
-        'TextBox1
+        'txtUsername
         '
-        Me.TextBox1.Location = New System.Drawing.Point(107, 57)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(149, 26)
-        Me.TextBox1.TabIndex = 1
+        Me.txtUsername.Location = New System.Drawing.Point(107, 57)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(149, 26)
+        Me.txtUsername.TabIndex = 1
         '
         'Label3
         '
@@ -72,21 +73,21 @@ Partial Class frmAddUser
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Password"
         '
-        'TextBox2
+        'txtPassword
         '
-        Me.TextBox2.Location = New System.Drawing.Point(107, 89)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(149, 26)
-        Me.TextBox2.TabIndex = 2
-        Me.TextBox2.UseSystemPasswordChar = True
+        Me.txtPassword.Location = New System.Drawing.Point(107, 89)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(149, 26)
+        Me.txtPassword.TabIndex = 2
+        Me.txtPassword.UseSystemPasswordChar = True
         '
-        'TextBox3
+        'txtPassword2
         '
-        Me.TextBox3.Location = New System.Drawing.Point(107, 121)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(149, 26)
-        Me.TextBox3.TabIndex = 3
-        Me.TextBox3.UseSystemPasswordChar = True
+        Me.txtPassword2.Location = New System.Drawing.Point(107, 121)
+        Me.txtPassword2.Name = "txtPassword2"
+        Me.txtPassword2.Size = New System.Drawing.Size(149, 26)
+        Me.txtPassword2.TabIndex = 3
+        Me.txtPassword2.UseSystemPasswordChar = True
         '
         'Label4
         '
@@ -106,19 +107,19 @@ Partial Class frmAddUser
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Last Name"
         '
-        'TextBox4
+        'txtfname
         '
-        Me.TextBox4.Location = New System.Drawing.Point(107, 169)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(149, 26)
-        Me.TextBox4.TabIndex = 4
+        Me.txtfname.Location = New System.Drawing.Point(107, 169)
+        Me.txtfname.Name = "txtfname"
+        Me.txtfname.Size = New System.Drawing.Size(149, 26)
+        Me.txtfname.TabIndex = 4
         '
-        'TextBox5
+        'txtlname
         '
-        Me.TextBox5.Location = New System.Drawing.Point(107, 201)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(149, 26)
-        Me.TextBox5.TabIndex = 5
+        Me.txtlname.Location = New System.Drawing.Point(107, 201)
+        Me.txtlname.Name = "txtlname"
+        Me.txtlname.Size = New System.Drawing.Size(149, 26)
+        Me.txtlname.TabIndex = 5
         '
         'cbAdmin
         '
@@ -130,31 +131,44 @@ Partial Class frmAddUser
         Me.cbAdmin.Text = "Admin"
         Me.cbAdmin.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnSubmit
         '
-        Me.Button1.Location = New System.Drawing.Point(171, 273)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSubmit.Location = New System.Drawing.Point(20, 262)
+        Me.btnSubmit.Name = "btnSubmit"
+        Me.btnSubmit.Size = New System.Drawing.Size(236, 35)
+        Me.btnSubmit.TabIndex = 9
+        Me.btnSubmit.Text = "Submit"
+        Me.btnSubmit.UseVisualStyleBackColor = True
+        '
+        'btnCancel
+        '
+        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCancel.Location = New System.Drawing.Point(20, 303)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(236, 35)
+        Me.btnCancel.TabIndex = 10
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
         '
         'frmAddUser
         '
+        Me.AcceptButton = Me.btnSubmit
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(279, 328)
+        Me.CancelButton = Me.btnCancel
+        Me.ClientSize = New System.Drawing.Size(279, 354)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnCancel)
+        Me.Controls.Add(Me.btnSubmit)
         Me.Controls.Add(Me.cbAdmin)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.txtlname)
+        Me.Controls.Add(Me.txtfname)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtPassword2)
+        Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -170,14 +184,15 @@ Partial Class frmAddUser
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtUsername As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents txtPassword2 As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txtfname As TextBox
+    Friend WithEvents txtlname As TextBox
     Friend WithEvents cbAdmin As CheckBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnSubmit As Button
+    Friend WithEvents btnCancel As Button
 End Class
