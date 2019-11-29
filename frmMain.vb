@@ -19,6 +19,7 @@ Public Class frmMain
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         EntrySubmit()
+        int_button = 0
     End Sub
 
     Private Sub dg_viewContacts_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_viewContacts.CellContentClick
@@ -41,7 +42,7 @@ Public Class frmMain
         btnUpdate.Enabled = True
         btnEdit.Enabled = False
         btnAddSupp.Enabled = False
-
+        int_button = 0
     End Sub
 
     'Update Function
