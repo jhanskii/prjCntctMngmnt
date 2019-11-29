@@ -14,7 +14,6 @@ Public Class frmMain
             txtSearch.Text = txtSearch.Text.Remove(txtSearch.TextLength - 1, 1)
         Else
             queryDataGrid()
-
         End If
     End Sub
 
@@ -24,13 +23,8 @@ Public Class frmMain
     End Sub
 
     Private Sub dg_viewContacts_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_viewContacts.CellContentClick
-        LoadDetails()
-        txtSupName.ReadOnly = True
-        txtSupContact1.ReadOnly = True
-        txtSupContact2.ReadOnly = True
-        txtSupContact3.ReadOnly = True
-        txtSupAddress.ReadOnly = True
-        int_button = 0
+        SelectionChangeQuery()
+        btnDelete.Enabled = True
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
@@ -43,6 +37,7 @@ Public Class frmMain
         btnUpdate.Enabled = True
         btnEdit.Enabled = False
         btnAddSupp.Enabled = False
+        btnDelete.Enabled = False
         int_button = 0
     End Sub
 
@@ -83,6 +78,7 @@ Public Class frmMain
 
             btnEdit.Enabled = False
             btnUpdate.Enabled = False
+            btnDelete.Enabled = False
 
             queryDataGrid()
             LoadDetails()
@@ -137,7 +133,7 @@ Public Class frmMain
 
             btnEdit.Enabled = False
             btnUpdate.Enabled = False
-
+            btnDelete.Enabled = False
             int_button = 1
 
             dg_viewContacts.Enabled = False
@@ -152,6 +148,7 @@ Public Class frmMain
 
     End Sub
 
+    'ADD RECORD
     Public Sub AddRecord()
         If MsgBox("Add " & txtSupName.Text & "?", MsgBoxStyle.YesNo, "Confirm Entry") = MsgBoxResult.Yes Then
 
@@ -192,4 +189,40 @@ Public Class frmMain
             int_button = 1
         End If
     End Sub
+
+    Public Sub SelectionChangeQuery()
+        LoadDetails()
+        txtSupName.ReadOnly = True
+        txtSupContact1.ReadOnly = True
+        txtSupContact2.ReadOnly = True
+        txtSupContact3.ReadOnly = True
+        txtSupAddress.ReadOnly = True
+        int_button = 0
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        DeleteRecord()
+    End Sub
+
+    'DeleteRecord
+    Public Sub DeleteRecord()
+        supplierID = dg_viewContacts.Item("ID", sIndex).Value
+        If MsgBox("Delete " & txtSupName.Text & "?", MsgBoxStyle.YesNo, "Confirm Delete") = MsgBoxResult.Yes Then
+            Dim sql_str As String
+            sql_str = "DELETE FROM tbl_suppliers WHERE supp_ID='" & supplierID & "'"
+            Dim SQLcomm As MySqlCommand = New MySqlCommand(sql_str, con)
+
+            con.Open()
+            SQLcomm.ExecuteNonQuery()
+            con.Close()
+
+            MsgBox("Record Deleted Sucessfully", MsgBoxStyle.Information)
+            queryDataGrid()
+            int_button = 0
+            btnDelete.Enabled = False
+        Else
+            int_button = 1
+        End If
+    End Sub
+
 End Class

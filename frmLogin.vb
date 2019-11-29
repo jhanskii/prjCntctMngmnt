@@ -7,7 +7,7 @@ Public Class frmLogin
         'Attempt Counter
         If count < 3 Then
             If txtUsername.Text = String.Empty And txtPassword.Text = String.Empty Then
-                'count = count + 1
+                count += 1
             Else
                 'Login Process
                 Dim ds As New DataSet
@@ -31,7 +31,7 @@ Public Class frmLogin
                             Me.Hide()
 
                         End If
-                        count = count + 1
+                        count += 1
                     Else
                         ts_lblStatus.Text = "Remaining attempts " & 3 - count & vbCrLf & "Please check your username/password."
                     End If
@@ -55,6 +55,6 @@ Public Class frmLogin
     End Sub
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtUsername.Select()
     End Sub
 End Class

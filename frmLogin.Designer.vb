@@ -50,24 +50,27 @@ Partial Class frmLogin
         Me.btnLogin.Location = New System.Drawing.Point(112, 109)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(188, 41)
-        Me.btnLogin.TabIndex = 1
+        Me.btnLogin.TabIndex = 3
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = True
         '
         'txtUsername
         '
+        Me.txtUsername.AcceptsReturn = True
         Me.txtUsername.AcceptsTab = True
         Me.txtUsername.Location = New System.Drawing.Point(112, 49)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(188, 20)
-        Me.txtUsername.TabIndex = 2
+        Me.txtUsername.TabIndex = 1
         '
         'txtPassword
         '
+        Me.txtPassword.AcceptsReturn = True
+        Me.txtPassword.AcceptsTab = True
         Me.txtPassword.Location = New System.Drawing.Point(112, 83)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(188, 20)
-        Me.txtPassword.TabIndex = 3
+        Me.txtPassword.TabIndex = 2
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'Label1
