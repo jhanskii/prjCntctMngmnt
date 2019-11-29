@@ -48,7 +48,7 @@ Public Class frmLogin
 
         Else
             ts_lblStatus.Text = "Failed to Authenticate, now closing"
-            ' Me.Close()
+            Me.Close()
 
 
         End If

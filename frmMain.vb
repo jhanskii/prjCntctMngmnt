@@ -6,6 +6,7 @@ Public Class frmMain
     Dim int_button As Integer
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         queryDataGrid()
+        frmLogin.Close()
     End Sub
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
