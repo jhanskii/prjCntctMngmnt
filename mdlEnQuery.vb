@@ -51,5 +51,51 @@ Module mdlEnQuery
             MsgBox(ex.Message)
         End Try
     End Sub
+    Public Sub queryUserDataGrid()
+        Try
+
+            con.Open()
+            Dim gds As New DataSet
+            Dim gdt As New DataTable
+            Dim dt_query As String
+            dt_query = "SELECT user_id AS 'UID', username AS 'Username', fname AS 'First Name', lname AS 'Last Name' FROM tbl_users"
+            gds.Tables.Add(gdt)
+
+            Dim gda As New MySqlDataAdapter
+
+
+            gda = New MySql.Data.MySqlClient.MySqlDataAdapter(dt_query, con)
+            gda.Fill(gdt)
+
+
+            Dim dv As New DataView(gds.Tables(0))
+            dv.RowFilter = "Username LIKE '%" & frmManageUsers.txtSearch.Text & "%'"
+
+            frmManageUsers.dg_viewUsers.DataSource = dv
+            frmManageUsers.dg_viewUsers.DataSource = gdt.DefaultView
+
+            con.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub SelectUserDataPopulate(ByVal IntUserId As Integer)
+        Try
+            con.Open()
+
+            Dim sql_populate As String
+            sql_populate = "SELECT * FROM tbl_users WHERE user_id ='" & IntUserId & "';"
+            da_populate = New MySqlDataAdapter(sql_populate, con)
+            da_populate.Fill(ds_populate, "UserInfo")
+
+            'Loads Supplier Information
+            frmManageUsers.txtUsername.Text = ds_populate.Tables("UserInfo").Rows(0).Item("username")
+
+            con.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
 End Module

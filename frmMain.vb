@@ -217,7 +217,7 @@ Public Class frmMain
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        frmAddUser.Show()
+        frmManageUsers.Show()
     End Sub
 
     Public Sub SelectionChangeQuery()

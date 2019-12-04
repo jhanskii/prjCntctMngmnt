@@ -287,7 +287,7 @@ Partial Class frmMain
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 36)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "New User"
+        Me.Button1.Text = "Manage Users"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'lblWelcome
